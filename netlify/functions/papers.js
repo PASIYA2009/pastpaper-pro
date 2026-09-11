@@ -1,0 +1,1 @@
+const gh=require('./_github');exports.handler=async()=>{try{return {statusCode:200,headers:{'Content-Type':'application/json','Cache-Control':'public,max-age=60'},body:JSON.stringify(await gh.list())}}catch(e){return {statusCode:500,body:JSON.stringify({error:e.message})}}};
